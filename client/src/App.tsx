@@ -10,12 +10,12 @@ function App() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-[url('./src/assets/bgImage.svg')] bg-contain  ">
+      <div className="flex items-center justify-center min-h-screen bg-[url('/bgImage.svg')] bg-contain  ">
       </div>
     );
   }
   return (
-    <div className="bg-[url('./src/assets/bgImage.svg')] bg-contain">
+    <div className="bg-[url('/bgImage.svg')] bg-contain">
       <Routes>
         <Route
           path="/"

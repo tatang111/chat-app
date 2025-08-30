@@ -26,10 +26,10 @@ io.on('connection', (socket) => {
     console.log("User connected", userId);
 
     if (userId) userSocketMap[userId] = socket.id;
-    
+
     // Emit online users to all connected clients
     io.emit('getOnlineUsers', Object.keys(userSocketMap));
-    
+
     socket.on('disconnect', () => {
         console.log("User disconnected", userId)
         delete userSocketMap[userId];
@@ -52,8 +52,12 @@ app.use('/api/messages', messageRouter)
 // Connect to MongoDB
 await connectDB();
 
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 5000
+    server.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${[PORT]}`)
+    })
+} 
 
-const PORT = process.env.PORT || 5000
-server.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${[PORT]}`)
-})
+// Export server for Vercel
+export default server

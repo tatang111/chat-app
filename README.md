@@ -25,4 +25,4 @@ Coba langsung aplikasi ini di sini:
 - Node.js
 - Express.js
 - JWT (JSON Web Token)
-- Database (tambahkan jenis database yang kamu pakai, misalnya: MongoDB, MySQL, PostgreSQL, dsb.)
+- MongoDB 
